@@ -1,38 +1,25 @@
 package com.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.example.DateChecker.Month;
+import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
-public class DateCheckerTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public DateCheckerTest( String testName )
-    {
-        super( testName );
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class DateCheckerTest {
+
+    DateChecker dateChecker = new DateChecker();
+
+    @Test
+    public void testJanuary() {
+        boolean actual = dateChecker.has31Days(Month.JANUARY);
+
+        assertTrue(actual, "January should have 31 days");
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+    @Test
+    public void testApril() {
+        boolean actual = dateChecker.has31Days(Month.APRIL);
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        assertFalse(actual, "April should have 30 days");
     }
 }
