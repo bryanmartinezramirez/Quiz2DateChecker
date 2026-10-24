@@ -1,13 +1,23 @@
 package com.example;
 
-/**
- * Hello world!
- *
- */
-public class DateChecker 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class DateChecker {
+
+    public enum Month {
+        JANUARY,
+        FEBRUARY,
+        MARCH,
+        APRIL,
+        MAY,
+        JUNE,
+        JULY,
+        AUGUST,
+        SEPTEMBER,
+        OCTOBER,
+        NOVEMBER,
+        DECEMBER
+        
+    }
+    public boolean has31Days(Month month) {
+        return false;
     }
 }
